@@ -15,6 +15,7 @@
 
             <Label
                 Text="Hello, World!"
+                FontFamily="MomoTrustDisplay-Regular"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
