@@ -2,11 +2,141 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel.Views.HospedagemContratada"
-             Title="HospedagemContratada">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="HospedagemContratada"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#171717">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="20"
+                             BackgroundColor="#131313">
+
+            <Label Text="Hospedagem Contratada"
+                   FontFamily="MomoTrustDisplay-Regular"
+                   FontSize="40"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <Frame Padding="15"
+                   BackgroundColor="#171717"
+                   CornerRadius="15"
+                   HasShadow="True">
+                <Label x:Name="lbl_suite"
+                       Text="Suíte Selecionada"
+                       FontFamily="MomoTrustDisplay-Regular"
+                       FontSize="24"
+                       TextColor="{StaticResource Primary}"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center" />
+            </Frame>
+
+            <Frame Padding="15"
+                   BackgroundColor="#171717"
+                   CornerRadius="15"
+                   HasShadow="True">
+                <Grid ColumnDefinitions="*, *"
+                      RowDefinitions="Auto"
+                      ColumnSpacing="20">
+
+                    <HorizontalStackLayout Grid.Column="0"
+                                            HorizontalOptions="Center"
+                                            Spacing="5">
+                        <Label Text="Adultos:" 
+                               TextColor="{StaticResource Primary}" 
+                               FontFamily="MomoTrustDisplay-Regular" />
+                        <Label x:Name="lbl_adultos"
+                               Text="0"
+                               TextColor="White"
+                               FontFamily="MomoTrustDisplay-Regular" />
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Grid.Column="1"
+                                            HorizontalOptions="Center"
+                                            Spacing="5">
+                        <Label Text="Crianças:" 
+                               TextColor="{StaticResource Primary}" 
+                               FontFamily="MomoTrustDisplay-Regular" />
+                        <Label x:Name="lbl_criancas"
+                               Text="0"
+                               TextColor="White"
+                               FontFamily="MomoTrustDisplay-Regular" />
+                    </HorizontalStackLayout>
+                </Grid>
+            </Frame>
+
+            <Frame Padding="15"
+                   BackgroundColor="#171717"
+                   CornerRadius="15"
+                   HasShadow="True">
+                <Grid ColumnDefinitions="*, *, *"
+                      RowDefinitions="Auto, Auto"
+                      ColumnSpacing="10"
+                      RowSpacing="5">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Check-in:"
+                           TextColor="{StaticResource Primary}"
+                           FontFamily="MomoTrustDisplay-Regular" />
+                    <Label Grid.Row="0" Grid.Column="1"
+                           Text="Check-out:"
+                           TextColor="{StaticResource Primary}"
+                           FontFamily="MomoTrustDisplay-Regular" />
+                    <Label Grid.Row="0" Grid.Column="2"
+                           Text="Estadia:"
+                           TextColor="{StaticResource Primary}"
+                           FontFamily="MomoTrustDisplay-Regular" />
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           x:Name="lbl_checkin"
+                           Text="--/--/----"
+                           TextColor="White"
+                           FontFamily="MomoTrustDisplay-Regular" />
+                    <Label Grid.Row="1" Grid.Column="1"
+                           x:Name="lbl_checkout"
+                           Text="--/--/----"
+                           TextColor="White"
+                           FontFamily="MomoTrustDisplay-Regular" />
+                    <Label Grid.Row="1" Grid.Column="2"
+                           x:Name="lbl_estadia"
+                           Text="0 dias"
+                           TextColor="White"
+                           FontFamily="MomoTrustDisplay-Regular" />
+                </Grid>
+            </Frame>
+
+            <Frame Padding="15"
+                   BackgroundColor="#171717"
+                   CornerRadius="15"
+                   HasShadow="True">
+                <VerticalStackLayout HorizontalOptions="CenterAndExpand"
+                                     Spacing="5">
+
+                    <Label Text="Valor Total:"
+                           TextColor="{StaticResource Primary}"
+                           FontFamily="MomoTrustDisplay-Regular"
+                           FontSize="20"
+                           HorizontalOptions="Center" />
+
+                    <Label x:Name="lbl_valor"
+                           Text="R$ 0,00"
+                           TextColor="White"
+                           FontFamily="MomoTrustDisplay-Regular"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="Voltar"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"
+                    FontFamily="MomoTrustDisplay-Regular"
+                    CornerRadius="15"
+                    FontSize="Medium"
+                    HeightRequest="50"
+                    Clicked="Button_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
